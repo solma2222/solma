@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLMA - Cosmetici di Lusso</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>SOLMA</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Collezione</a>
+      <a href="#">Contatti</a>
+      <span id="cart-count">🛒 Carrello (0)</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Benvenuti nel mondo della bellezza esclusiva</h2>
+      <p>Scopri la nostra selezione di cosmetici artigianali e sostenibili</p>
+    </section>
+
+    <section class="product-list">
+      <div class="product">
+        <img src="img/prodotto1.jpg" alt="Crema Elisir">
+        <h3>Crema Elisir</h3>
+        <p>€59.00 - Idratazione profonda con ingredienti naturali</p>
+        <button onclick="addToCart()">Aggiungi al carrello</button>
+      </div>
+
+      <div class="product">
+        <img src="img/prodotto2.jpg" alt="Siero Notte Aurea">
+        <h3>Siero Notte Aurea</h3>
+        <p>€89.00 - Rigenerazione cellulare mentre dormi</p>
+        <button onclick="addToCart()">Aggiungi al carrello</button>
+      </div>
+
+      <div class="product">
+        <img src="img/prodotto3.jpg" alt="Balsamo Labbra Oro">
+        <h3>Balsamo Labbra Oro</h3>
+        <p>€29.00 - Morbidezza e lucentezza in un solo gesto</p>
+        <button onclick="addToCart()">Aggiungi al carrello</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 SOLMA - Tutti i diritti riservati | Beauty with Integrity</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  background-color: #f8f5f2;
+  color: #2e2e2e;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #111;
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #555;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#cart-count {
+  float: right;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #efece6;
+  color: #3b3b3b;
+}
+
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  gap: 30px;
+}
+
+.product {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #111;
+}
+
+.product p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0efeb;
+  font-size: 14px;
+  color: #666;
+}
+let cartCount = 0;
+
+function addToCart() {
+  cartCount++;
+  document.getElementById('cart-count').innerText = `🛒 Carrello (${cartCount})`;
+}
